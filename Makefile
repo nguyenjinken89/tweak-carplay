@@ -20,7 +20,6 @@ CarPlayMaster_FILES = \
 
 CarPlayMaster_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Isrc
 CarPlayMaster_FRAMEWORKS = UIKit CoreGraphics QuartzCore Foundation AVFoundation
-CarPlayMaster_PRIVATE_FRAMEWORKS = CarKit CarPlayServices CarPlayUI
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
