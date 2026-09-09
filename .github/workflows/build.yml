@@ -10,7 +10,9 @@ on:
 jobs:
   build:
     name: Build Rootless .deb Package
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
+    env:
+      THEOS: ${{ runner.temp }}/theos
 
     steps:
       - name: Checkout Repository
@@ -18,27 +20,14 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Setup Theos Environment
-        uses: actions/checkout@v4
-        with:
-          repository: theos/theos
-          ref: master
-          path: theos
-          submodules: recursive
-
-      - name: Download iOS SDK
+      - name: Setup Theos
         run: |
-          mkdir -p theos/sdks
-          curl -fsSL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C theos/sdks
+          git clone --recursive https://github.com/theos/theos.git $THEOS
+          brew install ldid
+          curl -fsSL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C $THEOS/sdks
 
-      - name: Download iOS Toolchain (Linux)
+      - name: Build Rootless Package
         run: |
-          mkdir -p theos/toolchain/linux/iphone
-          curl -fsSL https://github.com/CRKatri/llvm-project/releases/download/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-ubuntu22.04.tar.xz | tar -xJ --strip-components=1 -C theos/toolchain/linux/iphone
-
-      - name: Build Rootless Debian Package
-        run: |
-          export THEOS=$GITHUB_WORKSPACE/theos
           make clean
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
