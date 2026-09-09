@@ -18,6 +18,10 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Install Build Tools
+        run: |
+          HOMEBREW_NO_AUTO_UPDATE=1 brew install ldid dpkg
+
       - name: Setup Theos
         run: |
           THEOS_DIR="$RUNNER_TEMP/theos"
@@ -28,7 +32,7 @@ jobs:
       - name: Build Rootless Package
         run: |
           make clean || true
-          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless messages=yes
 
       - name: Upload .deb Artifact
         uses: actions/upload-artifact@v4
