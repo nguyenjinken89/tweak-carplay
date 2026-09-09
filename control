@@ -1,0 +1,10 @@
+Package: com.anthony.carplaymaster
+Name: CarPlayMaster (Rootless)
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: Tweak CarPlay tiện ích toàn diện cho iOS 14 - 16 Rootless. Mở mọi app lên xe, mở khóa giới hạn di chuyển, tùy biến lưới icon đa màn hình xe, chống đơ máy và giám sát nhiệt độ pin iPhone 6s Plus.
+Maintainer: Anthony Nguyen
+Author: Anthony Nguyen
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader
+Icon: file:///Library/PreferenceBundles/CarPlayMasterPrefs.bundle/icon.png

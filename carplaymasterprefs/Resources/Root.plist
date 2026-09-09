@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>CẤU HÌNH CHÍNH</string>
+			<key>footerText</key>
+			<string>Bật hoặc tắt toàn bộ các tính năng của CarPlay Master.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Kích hoạt CarPlay Master</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>enableAllApps</string>
+			<key>label</key>
+			<string>Cho phép mọi ứng dụng lên xe</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>MỞ KHÓA GIỚI HẠN KHI XE CHẠY</string>
+			<key>footerText</key>
+			<string>Bỏ chặn bàn phím gõ chữ khi xe lăn bánh, bỏ giới hạn cuộn 12 dòng danh sách của Apple và mở khóa toàn bộ cảm ứng.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>bypassDrivingLimits</string>
+			<key>label</key>
+			<string>Mở khóa giới hạn lái xe (Speed Lock)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>preventAutoLock</string>
+			<key>label</key>
+			<string>Chống tự động tắt màn hình iPhone</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>BỐ CỤC LƯỚI ICON MÀN HÌNH XE</string>
+			<key>footerText</key>
+			<string>Tùy chỉnh số cột icon phù hợp với màn hình xe của bạn (4 cột cho màn 7-8", 5 hoặc 6 cột cho màn hình dài 10.25 - 12.3").</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>5</integer>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>iconColumns</string>
+			<key>validValues</key>
+			<array>
+				<integer>4</integer>
+				<integer>5</integer>
+				<integer>6</integer>
+				<integer>7</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>4 Cột</string>
+				<string>5 Cột</string>
+				<string>6 Cột</string>
+				<string>7 Cột</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>2</integer>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>iconRows</string>
+			<key>validValues</key>
+			<array>
+				<integer>2</integer>
+				<integer>3</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>2 Hàng</string>
+				<string>3 Hàng (Màn dọc)</string>
+			</array>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>hideIconLabels</string>
+			<key>label</key>
+			<string>Ẩn tên biểu tượng (Giao diện sạch)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSegmentCell</string>
+			<key>default</key>
+			<integer>0</integer>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>dockPosition</string>
+			<key>validValues</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>validTitles</key>
+			<array>
+				<string>Tự động</string>
+				<string>Dock Trái</string>
+				<string>Dock Phải</string>
+			</array>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>TIỆN ÍCH RIÊNG CHO IPHONE 6S PLUS (A9)</string>
+			<key>footerText</key>
+			<string>iPhone 6s Plus rất dễ bị ấm/nóng khi vừa cắm sạc vừa chạy bản đồ GPS. Tính năng này giúp theo dõi pin và nhiệt độ thời gian thực trên màn hình xe.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>enableBatteryPercentage</string>
+			<key>label</key>
+			<string>Hiện % Pin &amp; sạc trên thanh trạng thái</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>enableThermalAlert</string>
+			<key>label</key>
+			<string>Giám sát nhiệt độ chip A9 (Xanh/Vàng/Đỏ)</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>amoledBlackWallpaper</string>
+			<key>label</key>
+			<string>Hình nền AMOLED Đen Tuyệt Đối</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>BẢO VỆ RIÊNG TƯ KHI CÓ KHÁCH</string>
+			<key>footerText</key>
+			<string>Ẩn nội dung chi tiết tin nhắn Zalo/Messenger/SMS trên màn hình xe để tránh người khác đọc được.</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.anthony.carplaymaster</string>
+			<key>key</key>
+			<string>privacyHideNotifications</string>
+			<key>label</key>
+			<string>Ẩn nội dung xem trước thông báo</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>ÁP DỤNG CÀI ĐẶT</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>action</key>
+			<string>respring</string>
+			<key>label</key>
+			<string>Khởi động lại CarPlay &amp; SpringBoard</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>action</key>
+			<string>resetToDefaults</string>
+			<key>label</key>
+			<string>Khôi phục mặc định ban đầu</string>
+		</dict>
+
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerAlignment</key>
+			<integer>1</integer>
+			<key>footerText</key>
+			<string>CarPlayMaster v1.0.0 (Rootless)
+Phát triển bởi Anthony Nguyen
+Tối ưu hóa cho iPhone 6s Plus và tương thích mọi dòng xe.</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>CarPlay Master</string>
+</dict>
+</plist>
