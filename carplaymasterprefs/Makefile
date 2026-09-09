@@ -8,7 +8,6 @@ BUNDLE_NAME = CarPlayMasterPrefs
 
 CarPlayMasterPrefs_FILES = CPMRootListController.m
 CarPlayMasterPrefs_FRAMEWORKS = UIKit CoreGraphics
-CarPlayMasterPrefs_PRIVATE_FRAMEWORKS = Preferences
 CarPlayMasterPrefs_INSTALL_PATH = /Library/PreferenceBundles
 CarPlayMasterPrefs_CFLAGS = -fobjc-arc -I../src
 
