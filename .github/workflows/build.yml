@@ -11,8 +11,6 @@ jobs:
   build:
     name: Build Rootless .deb Package
     runs-on: macos-latest
-    env:
-      THEOS: ${{ runner.temp }}/theos
 
     steps:
       - name: Checkout Repository
@@ -22,13 +20,14 @@ jobs:
 
       - name: Setup Theos
         run: |
-          git clone --recursive https://github.com/theos/theos.git $THEOS
-          brew install ldid
-          curl -fsSL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C $THEOS/sdks
+          THEOS_DIR="$RUNNER_TEMP/theos"
+          git clone --recursive https://github.com/theos/theos.git "$THEOS_DIR"
+          curl -fsSL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C "$THEOS_DIR/sdks"
+          echo "THEOS=$THEOS_DIR" >> $GITHUB_ENV
 
       - name: Build Rootless Package
         run: |
-          make clean
+          make clean || true
           make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
 
       - name: Upload .deb Artifact
