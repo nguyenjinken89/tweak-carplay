@@ -1,0 +1,50 @@
+name: Build CarPlayMaster Deb (Rootless)
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Rootless .deb Package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Theos Environment
+        uses: actions/checkout@v4
+        with:
+          repository: theos/theos
+          ref: master
+          path: theos
+          submodules: recursive
+
+      - name: Download iOS SDK
+        run: |
+          mkdir -p theos/sdks
+          curl -fsSL https://github.com/theos/sdks/releases/latest/download/iPhoneOS16.5.sdk.tar.xz | tar -xJ -C theos/sdks
+
+      - name: Download iOS Toolchain (Linux)
+        run: |
+          mkdir -p theos/toolchain/linux/iphone
+          curl -fsSL https://github.com/CRKatri/llvm-project/releases/download/swift-5.7.3-RELEASE/swift-5.7.3-RELEASE-ubuntu22.04.tar.xz | tar -xJ --strip-components=1 -C theos/toolchain/linux/iphone
+
+      - name: Build Rootless Debian Package
+        run: |
+          export THEOS=$GITHUB_WORKSPACE/theos
+          make clean
+          make package FINALPACKAGE=1 THEOS_PACKAGE_SCHEME=rootless
+
+      - name: Upload .deb Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CarPlayMaster-Rootless-deb
+          path: packages/*.deb
+          if-no-files-found: error
